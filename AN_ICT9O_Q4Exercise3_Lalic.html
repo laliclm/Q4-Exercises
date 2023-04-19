@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Q4 | exercise III</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet" />
+
+	<style type="text/css">
+		body{
+			font-family: 'IM Fell DW Pica', serif;
+			background-image: url("https://img.freepik.com/free-vector/hand-drawn-flat-design-flower-pattern_23-2149377846.jpg?w=2000");
+		}
+		div{
+			font-size: 3em;
+			border-radius: 200px;
+			border: 15px double #b07da1;
+			text-align: center;
+			background-color:#DDBDD5;
+			width: 50%;
+			height: 50%;
+		}
+
+		button{
+			border: 7px double #5C5979;
+			border-radius: 100px;
+			display: inline-black;
+			padding: 9px;
+			color: #74668C;
+			background-color: #AC9FBB;
+			text-align: center;
+			cursor: pointer;
+			width: 65%;
+			font-size: 35px;
+		}
+		hr{
+			 outline: 7px double #b07da1;
+			 width: 73%;
+		}
+		#exercise3{
+			color: #b07da1;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<br><br>
+	<div class="container">
+		<br>
+		<h1 id="exercise3"> <u>exercise 3 - javascript arithmetic operators </u></h1>
+		<br>
+		<hr>
+		<br>
+		<button>
+			
+		<h1> h is equal to 10 !!</h1>
+			<h1> o is equal to 5 !!</h1>
+		</button>
+		<br><br>
+		<button>o + h = <strong id="p1"> </strong></button> 
+		<button>h - o = <strong id="p2"> </strong></button>
+		<button>o * h = <strong id="p3"> </strong></button> 
+		<button>h / o = <strong id="p4"> </strong></button>
+		<button>h % 2 = <strong id="p5"> </strong></button> 
+          <br><br>
+		<hr>
+		<br>
+		<br>
+		
+
+
+		<script>
+			let h=10, o=5;
+			let product = o * h;
+
+			alert("did you know that the product of two numerical variables is: " + product) 
+
+			//variable declaration;assignment of values
+			document.getElementById("p1").innerHTML = o + h;
+			document.getElementById("p2").innerHTML = h - o;
+			document.getElementById("p3").innerHTML = o * h;
+			document.getElementById("p4").innerHTML = h / o;
+			document.getElementById("p5").innerHTML = h % 2;
+		</script>
+	</div>
+</body>
+</html>

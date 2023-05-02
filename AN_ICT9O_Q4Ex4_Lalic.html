@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Q4 - Exercise IV</title>
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet" />
+
+	<style type="text/css">
+		body{
+			font-family: 'Comfortaa', cursive;
+			background-color: #D5C5B4;
+			color: #A27246;
+		}
+		input{
+			background-color: #D5C5B4;
+			color: #A27246;
+			border-radius: 20px;
+			border-color: #A27246;
+		}
+		fieldset{
+			background-color: #BC9F7D;
+			color: #7A5137;
+			padding: 20px;
+			border-radius: 20px;
+		}
+		button {
+			background-color: #D5C5B4;
+			color:#A27246;
+			border-radius: 20px;
+			border-color: #A27246;
+		}
+    option{
+      color:#BC9F7D;
+    }
+	</style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-5"><i>convert your measurements here !!</i></h1>
+    <form>
+    	<fieldset>
+      <div class="col-sm-12">
+        <label for="inputMeasurement">input measurement <i>!</i></label>
+        <input type="number" class="form-control" id="inputMeasurement">
+      </div><br>
+      <div class="col-sm-12">
+        <label for="inputUnit">input unit <i>!</i></label>
+        <select class="form-control" id="inputUnit">
+          <option value="meters">select</option>
+          <option value="meters">meters --> kilometers</option>
+          <option value="kilometers">kilometers --> miles</option>
+          <option value="minutes">minutes --> hours</option>
+          <option value="hours">hours --> days</option>
+        </select>
+      </div><br>
+ <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="outputMeasurement">output measurement <i>!</i><br><br>(final results)</label>
+        <input type="number" class="form-control" id="outputMeasurement" readonly>
+      </div>
+      <div class="col-sm-6">
+        <label for="outputUnit">output unit measure <i>!</i><br>(select a unit that matches the <u>input</u> unit first before calculating otherwise results will be zero)</label>
+        <select class="form-control" id="outputUnit">
+          <option value="meters">select</option>
+          <option value="kilometers">kilometers</option>
+          <option value="miles">miles</option>
+          <option value="hours">hours</option>
+          <option value="days">days</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-sm-12">
+      <button type="button" onclick="convert()">convert</button>
+  </div>
+    </form>
+  </div>
+</fieldset>
+
+  <script>
+    function convert() {
+ 
+  let inputMeasurement = Number(document.getElementById("inputMeasurement").value);
+  let inputUnit = document.getElementById("inputUnit").value;
+  let outputUnit = document.getElementById("outputUnit").value;
+
+ 
+  let meters = inputUnit === "meters" ? inputMeasurement : inputUnit === "kilometers" ? inputMeasurement * 1000 : 0;
+  let minutes = inputUnit === "minutes" ? inputMeasurement : inputUnit === "hours" ? inputMeasurement * 60 : 0;
+
+ 
+  let outputMeasurement = outputUnit === "kilometers" ? meters / 1000 : outputUnit === "miles" ? meters / 1609.34 : outputUnit === "hours" ? minutes / 60 : outputUnit === "days" ? minutes / 1440 : 0;
+
+
+  document.getElementById("outputMeasurement").value = outputMeasurement.toFixed(2);
+}
+
+  </script>
+
+</body>
+</html>
